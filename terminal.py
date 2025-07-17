@@ -365,23 +365,3 @@ class SSHTerminal(tk.Frame):
             self.shell.close()
         if self.client:
             self.client.close()
-
-
-def main():
-    root = tk.Tk()
-    root.title("SSH Terminal (PTY + ANSI)")
-    root.geometry("900x550")
-
-    # Fill with valid credentials before testing
-    hostname = "158.69.59.238"
-    username = "ubuntu"
-    password = "dXfXfXMKxJnb3BnDc20ccmty1EZZQZ4iyQdERdJJpnTfB3UREA"
-
-    term = SSHTerminal(root, hostname, username, password, autoconnect=True)
-
-    root.protocol("WM_DELETE_WINDOW", lambda: (term.close(), root.destroy()))
-    root.mainloop()
-
-
-if __name__ == "__main__":
-    main()
